@@ -58,7 +58,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100 transition-all duration-500 bg-tech-grid relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-slate-100 transition-all duration-500 bg-tech-grid relative overflow-hidden">
       {/* GLOWING ORB */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-cyan-900/10 blur-[150px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] aspect-square bg-blue-900/10 blur-[150px] rounded-full pointer-events-none"></div>
@@ -70,18 +70,18 @@ export default function Home() {
         
         {/* Left Column: Heading */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 bg-slate-900/80 border border-cyan-500/25 rounded-full px-4 py-1.5 text-xs font-mono font-bold tracking-wider text-cyan-400">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-hud-pulse"></span>
+          <div className="inline-flex items-center gap-2 bg-white dark:bg-slate-900/80 border border-cyan-500/25 rounded-full px-4 py-1.5 text-xs font-mono font-bold tracking-wider text-cyan-500 dark:text-cyan-400 shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-hud-pulse"></span>
             SYS: CORE_DEPLOYMENT_ONLINE
           </div>
 
-          <h1 className="text-5xl sm:text-7xl font-black leading-tight tracking-tight text-white">
+          <h1 className="text-5xl sm:text-7xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
             The Future of
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent glow-cyan"> Intelligent </span>
             Service Robotics
           </h1>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p className="text-slate-650 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
             Designing and manufacturing India&apos;s first fully secure, localized service robots. Engineered specifically to navigate high-footfall hospitality reception desks, healthcare hallways, and enterprise lobbies.
           </p>
 
@@ -94,7 +94,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="border border-cyan-500/25 bg-slate-900/50 text-cyan-400 hover:text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-wide hover:bg-cyan-500/10 hover:scale-[1.02] transition-all"
+              className="border border-cyan-500/25 bg-white dark:bg-slate-900/50 text-cyan-500 dark:text-cyan-400 hover:text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-wide hover:bg-cyan-500/10 hover:scale-[1.02] transition-all shadow-sm"
             >
               Book Systems Demo
             </Link>
@@ -116,58 +116,58 @@ export default function Home() {
 
       {/* SYSTEMS HUD LIVE TELEMETRY LOGS GRID */}
       <section className="py-16 px-6 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#080d1c]/80 backdrop-blur rounded-[36px] border-blueprint corner-bracket p-8 sm:p-10 shadow-2xl">
+        <div className="bg-white/80 dark:bg-[#080d1c]/80 backdrop-blur rounded-[36px] border border-slate-200 dark:border-cyan-500/20 corner-bracket p-8 sm:p-10 shadow-2xl transition-colors">
           <div>
             <h3 className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest mb-2 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping"></span>
               Live Systems Diagnostic Hub
             </h3>
-            <h2 className="text-2xl sm:text-4xl font-black text-white">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               Telemetry Core & Pathing Matrix
             </h2>
           </div>
 
           <div className="mt-8 grid lg:grid-cols-3 gap-8">
             {/* Live Parameter Meters */}
-            <div className="bg-[#030712]/90 rounded-2xl p-6 border border-cyan-500/15 shadow-sm font-mono text-xs space-y-4">
-              <h4 className="font-bold text-cyan-400 uppercase tracking-wider mb-2 pb-2 border-b border-cyan-500/10 flex justify-between items-center">
+            <div className="bg-slate-50 dark:bg-[#030712]/90 rounded-2xl p-6 border border-slate-200 dark:border-cyan-500/15 shadow-sm font-mono text-xs space-y-4 transition-colors">
+              <h4 className="font-bold text-cyan-500 dark:text-cyan-400 uppercase tracking-wider mb-2 pb-2 border-b border-slate-200 dark:border-cyan-500/10 flex justify-between items-center">
                 <span>⚡ CORE SENSORS</span>
                 <span className="text-[9px] text-emerald-400">NOMINAL</span>
               </h4>
               
               <div className="space-y-1.5">
-                <div className="flex justify-between text-slate-350">
+                <div className="flex justify-between text-slate-600 dark:text-slate-350">
                   <span>LiDAR Scan Angle:</span>
-                  <span className="text-cyan-400 font-bold">{telemetry.laserScan}°</span>
+                  <span className="text-cyan-500 dark:text-cyan-400 font-bold">{telemetry.laserScan}°</span>
                 </div>
-                <div className="w-full bg-[#020617] h-2 rounded-full overflow-hidden border border-cyan-500/10 p-0.5">
+                <div className="w-full bg-slate-200 dark:bg-[#020617] h-2 rounded-full overflow-hidden border border-slate-300 dark:border-cyan-500/10 p-0.5">
                   <div className="bg-cyan-500 h-full rounded-full transition-all duration-300" style={{ width: `${(telemetry.laserScan / 360) * 100}%` }}></div>
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <div className="flex justify-between text-slate-355">
+                <div className="flex justify-between text-slate-600 dark:text-slate-350">
                   <span>LiDAR Proximity Sweep:</span>
-                  <span className="text-cyan-400 font-bold">{telemetry.radarRange}m</span>
+                  <span className="text-cyan-500 dark:text-cyan-400 font-bold">{telemetry.radarRange}m</span>
                 </div>
-                <div className="w-full bg-[#020617] h-2 rounded-full overflow-hidden border border-cyan-500/10 p-0.5">
+                <div className="w-full bg-slate-200 dark:bg-[#020617] h-2 rounded-full overflow-hidden border border-slate-300 dark:border-cyan-500/10 p-0.5">
                   <div className="bg-cyan-500 h-full rounded-full transition-all duration-300" style={{ width: `${(telemetry.radarRange / 25) * 100}%` }}></div>
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <div className="flex justify-between text-slate-355">
+                <div className="flex justify-between text-slate-600 dark:text-slate-350">
                   <span>Compute Core Temp:</span>
-                  <span className="text-cyan-400 font-bold">{telemetry.cpuTemp}°C</span>
+                  <span className="text-cyan-500 dark:text-cyan-400 font-bold">{telemetry.cpuTemp}°C</span>
                 </div>
-                <div className="w-full bg-[#020617] h-2 rounded-full overflow-hidden border border-cyan-500/10 p-0.5">
+                <div className="w-full bg-slate-200 dark:bg-[#020617] h-2 rounded-full overflow-hidden border border-slate-300 dark:border-cyan-500/10 p-0.5">
                   <div className="bg-cyan-500 h-full rounded-full transition-all duration-300" style={{ width: `${(telemetry.cpuTemp / 80) * 100}%` }}></div>
                 </div>
               </div>
             </div>
 
             {/* Radar Coordinates Sweeping */}
-            <div className="bg-[#030712]/90 rounded-2xl p-6 border border-cyan-500/15 shadow-sm relative overflow-hidden flex items-center justify-center min-h-[180px]">
+            <div className="bg-slate-50 dark:bg-[#030712]/90 rounded-2xl p-6 border border-slate-200 dark:border-cyan-500/15 shadow-sm relative overflow-hidden flex items-center justify-center min-h-[180px] transition-colors">
               {/* Radar Coordinate Grid */}
               <div className="absolute inset-0 bg-tech-grid opacity-35 z-0"></div>
               
@@ -221,23 +221,23 @@ export default function Home() {
       </section>
 
       {/* VIDEO DEMO SECTION */}
-      <section className="bg-slate-900/30 py-24 px-6 border-t border-b border-cyan-500/10 relative z-10">
+      <section className="bg-slate-100/50 dark:bg-slate-900/30 py-24 px-6 border-t border-b border-slate-200 dark:border-cyan-500/10 relative z-10 transition-colors">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-block bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
             Robotics Demo
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight">
             See Our Robots
             <span className="text-cyan-500 glow-cyan"> In Action</span>
           </h2>
 
-          <p className="mt-6 text-slate-350 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 text-slate-650 dark:text-slate-355 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
             Explore how Techligence Robotics is transforming public-facing reception desks and clinical assistance.
           </p>
 
           {/* VIDEO FRAME */}
-          <div className="mt-16 bg-[#080d1c]/80 rounded-[36px] shadow-2xl overflow-hidden border-blueprint corner-bracket p-3 box-glow-cyan">
+          <div className="mt-16 bg-white dark:bg-[#080d1c]/80 rounded-[36px] shadow-2xl overflow-hidden border border-slate-200 dark:border-blueprint corner-bracket p-3 box-glow-cyan transition-colors">
             <div className="aspect-video rounded-[28px] overflow-hidden">
               <iframe
                 className="w-full h-full"
@@ -250,23 +250,23 @@ export default function Home() {
 
           {/* STATS COUNT */}
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-cyan-500/15 box-glow-cyan">
+            <div className="bg-white dark:bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-slate-200 dark:border-cyan-500/15 box-glow-cyan transition-colors">
               <h3 className="text-4xl font-black text-cyan-500 glow-cyan">50+</h3>
-              <p className="mt-2 text-slate-400 text-sm font-semibold">
+              <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm font-semibold">
                 Robotics Deployments
               </p>
             </div>
 
-            <div className="bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-cyan-500/15 box-glow-cyan">
+            <div className="bg-white dark:bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-slate-200 dark:border-cyan-500/15 box-glow-cyan transition-colors">
               <h3 className="text-4xl font-black text-cyan-500 glow-cyan">20+</h3>
-              <p className="mt-2 text-slate-400 text-sm font-semibold">
+              <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm font-semibold">
                 Enterprise Lobbies
               </p>
             </div>
 
-            <div className="bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-cyan-500/15 box-glow-cyan">
+            <div className="bg-white dark:bg-[#080d1c]/80 rounded-[28px] p-8 shadow-lg border border-slate-200 dark:border-cyan-500/15 box-glow-cyan transition-colors">
               <h3 className="text-4xl font-black text-cyan-500 glow-cyan">100%</h3>
-              <p className="mt-2 text-slate-400 text-sm font-semibold">
+              <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm font-semibold">
                 Secure Local Hosting
               </p>
             </div>
@@ -276,55 +276,55 @@ export default function Home() {
 
       {/* WHY CHOOSE TECHLIGENCE */}
       <section className="py-24 px-6 max-w-7xl mx-auto text-center relative z-10">
-        <div className="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+        <div className="inline-block bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
           Engineering Excellence
         </div>
 
-        <h2 className="text-4xl sm:text-5xl font-black text-white">
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white">
           Why Choose Techligence
         </h2>
 
-        <p className="mt-6 text-slate-350 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-6 text-slate-650 dark:text-slate-355 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
           Designed, engineered, and manufactured indigenously in India.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-          <div className="bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-cyan-500/15 hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
+          <div className="bg-white dark:bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-slate-200 dark:border-cyan-500/15 hover:border-cyan-500/40 dark:hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
             <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20">
-              <Compass className="w-6 h-6 text-cyan-400" />
+              <Compass className="w-6 h-6 text-cyan-550 dark:text-cyan-400" />
             </div>
-            <h3 className="text-xl font-bold text-white">Advanced SLAM</h3>
-            <p className="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Advanced SLAM</h3>
+            <p className="mt-3 text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               Highly responsive multi-sensor spatial navigation mapping through challenging layouts.
             </p>
           </div>
 
-          <div className="bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-cyan-500/15 hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
+          <div className="bg-white dark:bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-slate-200 dark:border-cyan-500/15 hover:border-cyan-500/40 dark:hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
             <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20">
-              <Brain className="w-6 h-6 text-cyan-400" />
+              <Brain className="w-6 h-6 text-cyan-550 dark:text-cyan-400" />
             </div>
-            <h3 className="text-xl font-bold text-white">Cognitive Core</h3>
-            <p className="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Cognitive Core</h3>
+            <p className="mt-3 text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               Integrated LLM conversational engine for natural speech interaction.
             </p>
           </div>
 
-          <div className="bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-cyan-500/15 hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
+          <div className="bg-white dark:bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-slate-200 dark:border-cyan-500/15 hover:border-cyan-500/40 dark:hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
             <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20">
-              <Zap className="w-6 h-6 text-cyan-400" />
+              <Zap className="w-6 h-6 text-cyan-550 dark:text-cyan-400" />
             </div>
-            <h3 className="text-xl font-bold text-white">Real-Time Core</h3>
-            <p className="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Real-Time Core</h3>
+            <p className="mt-3 text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               High-performance compute platforms responding immediately to visual cues.
             </p>
           </div>
 
-          <div className="bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-cyan-500/15 hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
+          <div className="bg-white dark:bg-[#080d1c]/60 p-8 rounded-[32px] shadow-lg border border-slate-200 dark:border-cyan-500/15 hover:border-cyan-500/40 dark:hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 text-left relative overflow-hidden">
             <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20">
-              <Shield className="w-6 h-6 text-cyan-400" />
+              <Shield className="w-6 h-6 text-cyan-550 dark:text-cyan-400" />
             </div>
-            <h3 className="text-xl font-bold text-white">Secure Data Nodes</h3>
-            <p className="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Secure Data Nodes</h3>
+            <p className="mt-3 text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               Encryption models locally hosted on domestic servers for military-grade protection.
             </p>
           </div>

@@ -223,7 +223,7 @@ export default function ProductsPage() {
   const [blueprintMode, setBlueprintMode] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100 transition-all duration-500 bg-tech-grid relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-slate-100 transition-all duration-500 bg-tech-grid relative overflow-hidden">
       {/* GLOW ORBS */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-cyan-900/10 blur-[150px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] aspect-square bg-blue-900/10 blur-[150px] rounded-full pointer-events-none"></div>
@@ -312,7 +312,7 @@ export default function ProductsPage() {
                 className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 border ${
                   activeRobot.id === robot.id
                     ? "bg-cyan-500 text-white border-cyan-500 shadow-lg shadow-cyan-500/20 scale-[1.02]"
-                    : "border-slate-800 bg-[#080d1c] hover:border-cyan-400 text-slate-300"
+                    : "border-slate-200 dark:border-slate-800 bg-white dark:bg-[#080d1c] hover:border-cyan-400 text-slate-700 dark:text-slate-300 shadow-sm"
                 }`}
               >
                 {robot.name}
@@ -378,7 +378,7 @@ export default function ProductsPage() {
                 className={`mt-6 px-6 py-2.5 rounded-xl font-bold text-xs tracking-wider uppercase transition-all duration-300 border shadow-md relative z-20 ${
                   blueprintMode
                     ? "bg-cyan-500 border-cyan-500 text-white shadow-cyan-500/25"
-                    : "border-slate-800 bg-[#080d1c] text-cyan-400 hover:text-white hover:border-cyan-400"
+                    : "border-slate-200 dark:border-slate-800 bg-white dark:bg-[#080d1c] text-cyan-500 dark:text-cyan-400 hover:text-white dark:hover:text-white hover:border-cyan-400"
                 }`}
               >
                 {blueprintMode ? "🖥️ View Photo" : "📐 View Technical Blueprint"}
@@ -387,30 +387,30 @@ export default function ProductsPage() {
 
             {/* Spec / Anatomy Panel */}
             <div>
-              <span className="inline-block bg-cyan-500/10 text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-4">
+              <span className="inline-block bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-4">
                 {activeRobot.category} &middot; Height: {activeRobot.height}
               </span>
-              <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight">
                 {activeRobot.name}
               </h2>
-              <p className="text-cyan-400 font-bold text-lg mt-1 tracking-wide">
+              <p className="text-cyan-655 dark:text-cyan-400 font-bold text-lg mt-1 tracking-wide">
                 {activeRobot.tagline}
               </p>
-              <p className="mt-6 text-slate-300 leading-relaxed text-base sm:text-lg">
+              <p className="mt-6 text-slate-650 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
                 {activeRobot.description}
               </p>
 
               {/* Anatomy Checklist */}
               <div className="mt-8 space-y-4">
-                <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">Anatomy & Key Systems</h3>
+                <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Anatomy & Key Systems</h3>
                 {activeRobot.features.map((f, i) => (
-                  <div key={i} className="flex gap-4 items-start bg-[#080d1c]/80 rounded-2xl p-4 border border-cyan-500/10 shadow-sm hover:border-cyan-500/25 transition-all duration-300">
+                  <div key={i} className="flex gap-4 items-start bg-white dark:bg-[#080d1c]/80 rounded-2xl p-4 border border-slate-200 dark:border-cyan-500/10 shadow-sm hover:border-cyan-500/25 transition-all duration-300">
                     <div className="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center border border-cyan-500/20 flex-shrink-0">
                       {renderFeatureIcon(f.icon)}
                     </div>
                     <div>
-                      <h4 className="font-bold text-white text-sm">{f.label}</h4>
-                      <p className="text-slate-400 text-xs mt-1 leading-relaxed">{f.desc}</p>
+                      <h4 className="font-bold text-slate-900 dark:text-white text-sm">{f.label}</h4>
+                      <p className="text-slate-600 dark:text-slate-400 text-xs mt-1 leading-relaxed">{f.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -426,7 +426,7 @@ export default function ProductsPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="border border-cyan-500/35 bg-slate-900/50 text-cyan-400 px-7 py-3.5 rounded-xl font-bold text-sm tracking-wide hover:bg-cyan-500/10 hover:scale-[1.02] transition-all"
+                  className="border border-cyan-500/25 bg-white dark:bg-slate-900/50 text-cyan-500 dark:text-cyan-400 hover:text-white px-7 py-3.5 rounded-xl font-bold text-sm tracking-wide hover:bg-cyan-500/10 hover:scale-[1.02] transition-all shadow-sm"
                 >
                   Request Specs
                 </Link>
@@ -435,11 +435,11 @@ export default function ProductsPage() {
           </div>
 
           {/* Quick Lineup Grid */}
-          <div className="mt-28 border-t border-slate-800 pt-20">
-            <h3 className="text-3xl font-black text-center mb-4 text-white">
+          <div className="mt-28 border-t border-slate-200 dark:border-slate-800 pt-20">
+            <h3 className="text-3xl font-black text-center mb-4 text-slate-900 dark:text-white">
               Full Smart Robotics <span className="text-cyan-500">Lineup</span>
             </h3>
-            <p className="text-slate-400 text-center max-w-xl mx-auto mb-12">
+            <p className="text-slate-600 dark:text-slate-400 text-center max-w-xl mx-auto mb-12">
               Browse through our modular receptionist and logistics models designed to support and scale operations.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -450,9 +450,9 @@ export default function ProductsPage() {
                     setActiveRobot(robot);
                     window.scrollTo({ top: 350, behavior: "smooth" });
                   }}
-                  className="bg-[#080d1c]/80 rounded-[32px] overflow-hidden border border-cyan-500/10 shadow-lg hover:shadow-cyan-500/15 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col h-full box-glow-cyan"
+                  className="bg-white dark:bg-[#080d1c]/80 rounded-[32px] overflow-hidden border border-slate-200 dark:border-cyan-500/10 shadow-lg hover:shadow-cyan-500/15 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col h-full box-glow-cyan"
                 >
-                  <div className="h-60 bg-gradient-to-b from-[#020617] to-[#080d1c] relative overflow-hidden flex items-center justify-center p-4">
+                  <div className="h-60 bg-gradient-to-b from-slate-100 to-slate-200 dark:from-[#020617] to-[#080d1c] relative overflow-hidden flex items-center justify-center p-4">
                     <img
                       src={robot.image}
                       alt={robot.name}
@@ -465,8 +465,8 @@ export default function ProductsPage() {
                   <div className="p-6 flex flex-col justify-between flex-grow">
                     <div>
                       <p className="text-[10px] text-cyan-500 font-bold uppercase tracking-wider mb-1">{robot.height} &middot; {robot.category}</p>
-                      <h4 className="text-xl font-bold text-white group-hover:text-cyan-500 transition duration-300">{robot.name}</h4>
-                      <p className="text-slate-400 text-xs mt-2 leading-relaxed">{robot.tagline}</p>
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition duration-300">{robot.name}</h4>
+                      <p className="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">{robot.tagline}</p>
                     </div>
                   </div>
                 </div>
