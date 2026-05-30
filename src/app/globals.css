@@ -181,3 +181,33 @@ body {
   top: 0;
   left: 50%;
 }
+
+/* JOY-BOT DYNAMIC HUD ANIMATIONS */
+@keyframes robot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes robot-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes robot-talk {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scaleY(0.4) scaleX(0.85); }
+}
+
+.animate-robot-float {
+  animation: robot-float 4s infinite ease-in-out;
+}
+
+.animate-robot-blink {
+  animation: robot-blink 3.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.animate-robot-talk {
+  animation: robot-talk 0.2s infinite ease-in-out;
+  transform-origin: center;
+}

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
+import InteractiveBot from "@/components/InteractiveBot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ThemeProvider>
           {children}
+          <InteractiveBot />
         </ThemeProvider>
       </body>
     </html>
